@@ -207,6 +207,10 @@ class Vgg16():
         """
         self.model.fit_generator(batches, samples_per_epoch=batches.nb_sample, nb_epoch=nb_epoch,
                 validation_data=val_batches, nb_val_samples=val_batches.nb_sample)
+        #self.model.fit_generator(batches,steps_per_epoch=batches.nb_sample // batches.batch_size,
+        #    epochs=nb_epoch,
+        #    validation_data=val_batches,
+        #    validation_steps=val_batches.nb_sample // val_batches.batch_size)
 
 
     def test(self, path, batch_size=8):
